@@ -1,7 +1,7 @@
-SquidBot -- Post Anonymously In Slack
+SquidBot - Post Anonymously In Slack
 =============
 
- Slack is a team communication platform that is now deeply integrated into the workflow for thousands of companies.
+ [Slack](https://slack.com/) is a messaging app for thousands of teams around the world.
 
  SquidBot is a Slack bot written in ruby that connects via the [Slack API](https://api.slack.com) and helps team members send anonymous messages to other members.
 
@@ -12,8 +12,8 @@ SquidBot -- Post Anonymously In Slack
 To run your own version of SquidBot you need:
 
 1. a [Slack](https://slack.com) account to send and receive team messages
-2. [Ruby 2.3.X](https://www.ruby-lang.org/en/documentation/installation/) and installed on your computer
-3. [Github](https://github.com/) setup via the command line  or the [Github Desktop](https://desktop.github.com/) installed on your computer
+2. [Ruby 2.3](https://www.ruby-lang.org/en/documentation/installation/) and installed on your computer
+3. [Github](https://github.com/) setup via the command line  or the [Github Desktop](https://desktop.github.com/) app
 3. a free [Heroku](https://www.heroku.com) hosting account for the SquidBot code and [Kaffeine](http://kaffeine.herokuapp.com) to keep your server awake.
 
 
@@ -30,11 +30,11 @@ Installation
 
         bundle install
 
-3. Run SquidBot locally ([Sinatra](https://github.com/sinatra/sinatra) powers SquidBot.)
+3. Run SquidBot locally using [Sinatra](https://github.com/sinatra/sinatra)
 
         ruby app.rb
 
-4. Deploy SquidBot to Heroku (https://devcenter.heroku.com/articles/rack)
+4. Deploy SquidBot to [Heroku](https://devcenter.heroku.com/articles/rack) *Note*: Copy your newly deployed Heroku URL because you will need it later when configuring Slack.
 
         $ git init
         $ git add .
@@ -42,7 +42,6 @@ Installation
         $ heroku create
         $ git push heroku master
 
-*Note*: Copy your newly deployed Heroku URL because you will need it when configuring Slack.
 
 5. Add SquidBot to your Slack team by using both the *slash command* and *incoming webhook* custom integration features of the [Slack apps platform](https://slack.com/apps/manage/custom-integrations)
 
@@ -58,7 +57,8 @@ Installation
          the following page will show a Webhook URL. Please copy the Webhook URL.
          Open a command line / Terminal window and set up a Heroku environment variable using the saved Webhook URL.
          From the command line inside the project directory, run: heroku config:set SLACK_WEBHOOK_URL=https://hooks.slack.com/services/your-webhook-url
-         DONE!
+
+         ALL DONE!
 
 
-*Note*: To test SquidBot, enter the channels you selected earlier and begin typing with /squid [your message text].
+*Note*: To test SquidBot, enter the channel you selected during the Slack setup and begin typing with /squid [your message text]
