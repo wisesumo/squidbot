@@ -9,11 +9,14 @@ get '/' do
   	erb :index
 end
 
+# explain
 get '/anonymize' do
   postback params[:text], params[:channel_id]
   status 200
 end
 
+
+# explain
 def postback message, channel
     slack_webhook = ENV['SLACK_WEBHOOK_URL']
     HTTParty.post slack_webhook, body: {"text" => message.to_s, "username" => "Squid", "channel" => params[:channel_id]}.to_json, headers: {'content-type' => 'application/json'}
